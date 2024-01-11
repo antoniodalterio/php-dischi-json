@@ -19,7 +19,9 @@
   </head>
   <body>
     <div id="app">
-      <h1 class="text-center py-3">{{message}}</h1>
+      <ul>
+        <li v-for="album in albums">{{album.name}}</li>
+      </ul>
     </div>
     <!-- vue js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
