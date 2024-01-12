@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PHP Dischi JSON</title>
     <!-- Bootstrap -->
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,8 +20,32 @@
   </head>
   <body>
     <div id="app">
-      <ul>
-        <li v-for="album in albums">{{album.name}}</li>
+      <header class="py-3">
+        <div class="container">
+          <img
+            src="https://cdn.freebiesupply.com/logos/large/2x/spotify-2-logo-png-transparent.png"
+            alt="logo spotify"
+          />
+        </div>
+      </header>
+      <!-- lista di album -->
+      <ul class="container d-flex flex-wrap">
+        <li class="list-group text-center col-4 p-3" v-for="album in albums">
+          <!-- card album -->
+          <div
+            class="card my-3 px-3 py-3 w-75 d-flex flex-column align-items-center text-white"
+          >
+            <!-- img cover album -->
+            <img :src="album.src" alt="album cover" />
+            <!-- Titolo -->
+            <p class="mt-2 fw-bolder fs-4">{{album.name}}</p>
+            <!-- autore album -->
+            <p>{{album.author}}</p>
+            <!-- data di rilascio -->
+            <h5>{{album.release}}</h5>
+          </div>
+          <!-- card album -->
+        </li>
       </ul>
     </div>
     <!-- vue js -->
